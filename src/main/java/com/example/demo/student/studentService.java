@@ -2,6 +2,7 @@ package com.example.demo.student;
 
 import java.nio.channels.IllegalSelectorException;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -47,6 +48,11 @@ public class studentService
 
         return ResponseEntity.ok(updatestudent);
 
+    }
+    public Optional<student> getStudentsbyID(Long studid) {
+        
+        return studentrepository.findById(studid);
+        
     }
 
 }
